@@ -2,64 +2,64 @@
 Classes
 */
 .darkblue{
-    --text: rgb(190, 190, 235);
-    --other-text: rgb(177, 177, 250);
-    --accent: rgb(117, 117, 190);
-    --hover: rgb(154, 154, 209);
+    --text: #BEBEEB;
+    --other-text: #B1B1FA;
+    --accent: #7575BE;
+    --hover: #9A9AD1;
     --button-text: var(--text);
-    --button: rgb(50,50,65);
-    --bg: rgb(15,15,25);
-    --menu_space: rgb(30,30,55);
+    --button: #323241;
+    --bg: #0F0F19;
+    --menu_space: #1E1E37;
 }
 .darkred{
-    --text: rgb(235,190, 190);
-    --other-text: rgb(250, 177, 177);
-    --accent: rgb(190,117,117);
-    --hover: rgb(209, 154, 154);
+    --text: #EBBEBE;
+    --other-text: #FAB1B1;
+    --accent: #BE7575;
+    --hover: #D19A9A;
     --button-text: var(--text);
-    --button: rgb(65,50,50);
-    --bg: rgb(25,15,15);
-    --menu_space: rgb(55,30,30);
+    --button: #413232;
+    --bg: #190F0F;
+    --menu_space: #371E1E;
 }
 .darkgreen{
-    --text: rgb(190,235,190);
-    --other-text: rgb(177, 250, 177);
-    --accent: rgb(117,190,117);
-    --hover: rgb(154, 209, 154);
+    --text: #BEEBBE;
+    --other-text: #B1FAB1;
+    --accent: #75BE75;
+    --hover: #9AD19A;
     --button-text: var(--text);
-    --button: rgb(50,65,50);
-    --bg: rgb(15,25,15);
-    --menu_space: rgb(30,55,30);
+    --button: #324132;
+    --bg: #0F190F;
+    --menu_space: #1E371E;
 }
 .lavender{
-    --text: rgb(105, 105, 170);
-    --other-text:rgb(138, 123, 187);
-    --accent: rgb(117, 117, 190);
-    --hover: rgb(190,152,220);
-    --button-text: rgb(214, 214, 249);
-    --button: rgb(117, 117, 190);
-    --bg: rgb(194, 194, 229);
-    --menu_space: rgb(166, 179, 239);
+    --text: #6969AA;
+    --other-text:#7B7BBB;
+    --accent: #7575BE;
+    --hover: #BE98DC;
+    --button-text: #D6D6F9;
+    --button: #7575BE;
+    --bg: #C2C2E5;
+    --menu_space: #A6B3EF;
 }
 .pink{
-    --text: rgb(170, 105, 105);
-    --other-text: rgb(177, 113, 147);
-    --accent: rgb(250, 154, 154);
-    --hover: rgb(240,190,152);
-    --button-text: rgb(249, 214, 214);
-    --button: rgb(250, 154, 154);
-    --bg: rgb(249, 214, 214);
-    --menu_space: rgb(240, 186, 196);
+    --text: #AA6969;
+    --other-text: #D18686;
+    --accent: #FA9A9A;
+    --hover: #F0BE98;
+    --button-text: #F9D6D6;
+    --button: #FA9A9A;
+    --bg: #F9D6D6;
+    --menu_space: #F0BAC4;
 }
 .mocha{
-    --text: rgb(105, 170, 105);
-    --other-text: rgb(83, 187, 138);
-    --accent: rgb(214,249,214);
-    --hover: rgb(152,240,190);
-    --button-text: rgb(214, 249, 214);
-    --button: rgb(117, 190, 117);
-    --bg: rgb(194, 229, 194);
-    --menu_space: rgb(166, 239, 179);
+    --text: #69AA69;
+    --other-text: #53BB8A;
+    --accent: #D6F9D6;
+    --hover: #98F0BE;
+    --button-text: #D6F9D6;
+    --button: #75BE75;
+    --bg: #C2E5C2;
+    --menu_space: #A6EFB3;
 }
 /*
 Everything Else
@@ -76,7 +76,7 @@ label {
 }
 h1,h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /*color: rgb(158, 143, 207);*/
+    /*color: #9E8FCF;*/
     color: var(--other-text);
     /*text-align: center;*/
 }
@@ -115,7 +115,7 @@ a:hover {
 }
 input{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /*color: rgb(110,157,113);*/
+    /*color: #6E9D71;*/
     background-color: var(--accent);
     color: var(--other-text)
 }
@@ -132,8 +132,8 @@ Other buttons
     font-size: 200%; 
 }
 .important_button {
-    color: maroon;
-    background-color:tomato;
+    background-color: maroon;
+    color:tomato;
 }
 .important_button:hover {
     background-color: crimson;

@@ -3,6 +3,10 @@
 
 This is a mundane task-recording site that you can use yourself by either downloading the .zip as-is, or you're out of luck because I don't have a web domain for this, and I haven't figured out how to use Github Pages.
 
+## Setting up:
+
+Download the included.zip file, which will include every essential part of the program (e.g. stylesheets, scripts, etc.) + the README and license.
+
 ## How to use:
 
 To use the application, first open the file `multipage_test.html` in a web browser, such as Chrome, Firefox, or Edge. In other words, copy-paste the `multipage_test.html` file's location into a new tab. Then, you may bookmark the site on your browser if you wish.
@@ -44,5 +48,5 @@ Changes the page's display into a different color between green, blue, and red.
 Notes:
  - `Command+S` (on Mac) has not been tested as of now
  - **Reset Page** only resets one page instead of the entire document
-  - (On a side note, **Reset Page** doesn't actually change color from the **Change CSS** button)
+    - (On a side note, **Reset Page** doesn't actually change color from the **Change CSS** button)
  - The **settings** do not actually work yet

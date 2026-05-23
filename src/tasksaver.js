@@ -24,16 +24,18 @@ function check() {
     } else return true;
 }
 function darkShift() {
-  darkmode = !darkmode;
-  if (darkmode) document.body.className = css_dark[css_index];
-  else document.body.className = css_light[css_index];
+    darkmode = !darkmode;
+    if (darkmode) document.body.className = css_dark[css_index];
+    else document.body.className = css_light[css_index];
+    localStorage.setItem("darkmode",darkmode);
 }
 function cssChange() {
     css_index++;
     css_index %= css_dark.length;
     //document.getElementById("css_thing").href = "CSS/" + css[css_index];
-  if (darkmode) document.body.className = css_dark[css_index];
-  else document.body.className = css_light[css_index];
+    if (darkmode) document.body.className = css_dark[css_index];
+    else document.body.className = css_light[css_index];
+    localStorage.setItem("css_index",css_index);
 }
 /*
 Updates display without modifying page numbers/count.
@@ -198,6 +200,8 @@ function addMenuButton(num) {
 
 INITIALIZATION
 
+(TODO: Optimize to reduce the brief moment in which css is briefly default and buttons are unloaded)
+
 */
 
 
@@ -208,8 +212,22 @@ if (imported_settings) {
   //document.body.className()
 }
 
+// Load style based on what's saved from previous session
+// Reminder: Optimize lines 218, 219, 225, 226 since they repeat from darkShift() and cssChange()
+const darkmode_saved = localStorage.getItem("darkmode");
+if(darkmode_saved){
+    darkmode = (darkmode_saved === "true" ? true:false);
+    if (darkmode) document.body.className = css_dark[css_index];
+    else document.body.className = css_light[css_index];
+}
+const color_saved = localStorage.getItem("css_index");
+if(color_saved){
+    css_index = parseInt(color_saved);
+    if (darkmode) document.body.className = css_dark[css_index];
+    else document.body.className = css_light[css_index];
+}
 
-//Initialize Keybinds
+// Initialize Keybinds
 document.addEventListener("keydown", (event) => {
     if (event.key === "s" && (event.ctrlKey || event.metaKey)) {
         save();
@@ -218,14 +236,14 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-//Filter index parameter
+// Filter index parameter
 const params = new URLSearchParams(window.location.search);
 if (params.get('index')) {
     currPage = parseInt(params.get('index'));
 }
 
 
-//load initial number of pages
+// Load initial number of pages
 const page_temp = localStorage.getItem("MAX_PAGES");
 if (page_temp != null) {
     MAX_PAGES = page_temp;
