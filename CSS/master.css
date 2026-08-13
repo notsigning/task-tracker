@@ -61,6 +61,9 @@ Classes
     --bg: #C2E5C2;
     --menu_space: #A6EFB3;
 }
+.unloaded{
+    --bg:#000000;
+}
 /*
 Everything Else
 */

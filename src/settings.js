@@ -1,3 +1,19 @@
+var darkmode = true;
+const css_dark = ["darkblue", "darkred", "darkgreen"];
+const css_light = ["lavender", "pink", "mocha"];
+var css_index = 0;
+
+const darkmode_saved = localStorage.getItem("darkmode");
+if(darkmode_saved){
+    darkmode = (darkmode_saved === "true" ? true:false);
+}
+const color_saved = localStorage.getItem("css_index");
+if(color_saved){
+    css_index = parseInt(color_saved);
+}
+if (darkmode) document.body.className = css_dark[css_index];
+else document.body.className = css_light[css_index];
+
 const settings = document.getElementsByTagName("input");
 document.getElementById("settings").addEventListener("submit", (event) => {
   event.preventDefault();

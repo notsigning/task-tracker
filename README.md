@@ -5,11 +5,15 @@ This is a mundane task-recording site that you can use yourself by either downlo
 
 ## Setting up:
 
-Download the included.zip file, which will include every essential part of the program (e.g. stylesheets, scripts, etc.) + the README and license.
+Download the included.zip file, which will include every essential part of the program (e.g. stylesheets, scripts, etc.) + the README and license. Alternatively, opening with GitHub Desktop allows you to receive updates simply by fetching from origin, and by adding the repository locally, the app should work similarly to if downloaded from the .zip and extracted.
 
 ## How to use:
 
 To use the application, first open the file `multipage_test.html` in a web browser, such as Chrome, Firefox, or Edge. In other words, copy-paste the `multipage_test.html` file's location into a new tab. Then, you may bookmark the site on your browser if you wish.
+
+## What's the difference between Google Docs or any other document-editing software?
+
+This app requires no Wi-Fi, and so everything is stored locally. This means that no bit of data from the app is being sent elsewhere. Also, despite lacking in features in contrast to Google Docs, it is much more lightweight, making it load much faster without needing to create a whole new document, and works better on older computers.
 
 ---
 
@@ -25,7 +29,7 @@ Alternatively, the shortcut `Ctrl+S` (`Command+S` on Mac) does the same thing, a
 
 ### Buttons
 
-There are various buttons on the page in darker green boxes. Most of these buttons have reactions.
+There are various buttons on the page both above and below the content. 
 
 #### Arrow Buttons
 
@@ -39,9 +43,13 @@ Simply reopens the menu introduced from loading the page.
 
 Adds a list into the content box. Lists do not support indentation as of now, but are still useful for organizing.
 
-#### Change CSS
+#### Change Colors
 
-Changes the page's display into a different color between green, blue, and red.
+Changes the page's display into a different color between blue, red, and green. The theme will, by default, be saved between sessions.
+
+#### Dark/Light Mode
+
+Toggles between dark and light mode.
 
 ---
 
@@ -49,4 +57,4 @@ Notes:
  - `Command+S` (on Mac) has not been tested as of now
  - **Reset Page** only resets one page instead of the entire document
     - (On a side note, **Reset Page** doesn't actually change color from the **Change CSS** button)
- - The **settings** do not actually work yet
+ - The **settings** do not actually work fully yet

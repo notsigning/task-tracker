@@ -96,7 +96,7 @@ function save() {
     localStorage.setItem(file, document.getElementById("displaybox").innerHTML);
     localStorage.setItem(title, document.getElementById("title").innerHTML);
     localStorage.setItem("MAX_PAGES", MAX_PAGES);
-    document.getElementById("savemsg").innerHTML = "Last saved: " + Date().slice( - 41, -32);
+    document.getElementById("savemsg").innerHTML = "Last saved: " + Date().slice(16, 25);
 }
 /*
 Resets the current page.
@@ -195,6 +195,50 @@ function addMenuButton(num) {
   menu.appendChild(newline);
 }
 
+// Convert all text into a javascript object
+function getAllText() {
+  let page_titles = [];
+  let page_contents = [];
+  for (let i = 0; i < MAX_PAGES; i++){
+    page_titles.push(localStorage.getItem("title" + i));
+    page_contents.push(localStorage.getItem("page" + i));
+  }
+  let all_content = {
+    MAX_PAGES: MAX_PAGES,
+    page_titles: page_titles,
+    page_contents: page_contents
+  };
+  if (confirm("Copy the object?")) {
+    copy(JSON.stringify(all_content));
+  }
+  console.log(JSON.stringify(all_content));
+}
+// Reverse the process to load everything
+function parseAllText_str(s) {
+  let all_text = JSON.parse(s);
+  parseAllText(all_text);
+}
+// Parse it in object form
+function parseAllText(all_text) {
+  if (all_text) {
+    if (all_text["MAX_PAGES"] && all_text["page_titles"] && all_text["page_contents"]) {
+      localStorage.setItem("MAX_PAGES", all_text["MAX_PAGES"]);
+      for (let i = 0; i < all_text["MAX_PAGES"]; i++){
+        if (all_text["page_titles"][i]) {
+          localStorage.setItem("title"+i, all_text["page_titles"][i]);
+        }
+        if (all_text["page_contents"][i]) {
+          localStorage.setItem("page"+i, all_text["page_contents"][i]);
+        }
+      }
+      window.location.reload();
+    }
+    else {
+      alert("Cannot parse given object for strings");
+    }
+  }
+}
+
 
 /*
 
@@ -213,19 +257,17 @@ if (imported_settings) {
 }
 
 // Load style based on what's saved from previous session
-// Reminder: Optimize lines 218, 219, 225, 226 since they repeat from darkShift() and cssChange()
+// Reminder: Optimize lines 225, 226 since they repeat from darkShift() and cssChange()
 const darkmode_saved = localStorage.getItem("darkmode");
 if(darkmode_saved){
     darkmode = (darkmode_saved === "true" ? true:false);
-    if (darkmode) document.body.className = css_dark[css_index];
-    else document.body.className = css_light[css_index];
 }
 const color_saved = localStorage.getItem("css_index");
 if(color_saved){
     css_index = parseInt(color_saved);
-    if (darkmode) document.body.className = css_dark[css_index];
-    else document.body.className = css_light[css_index];
 }
+if (darkmode) document.body.className = css_dark[css_index];
+else document.body.className = css_light[css_index];
 
 // Initialize Keybinds
 document.addEventListener("keydown", (event) => {

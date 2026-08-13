@@ -6,9 +6,9 @@
     <link rel = "icon" type="image/x-icon" href="./Assets/smiley.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class = "darkblue" id = all> 
+<body class="unloaded" id = all> 
     <!-- onbeforeunload = "return check();" -->
-    <h2 style = "text-align: center;" id = "page_title"></h2>
+    <h2 style = "text-align: center;" id = "page_title">Loading...</h2>
     <div id="menu" class = "idk">
         <div style = "margin:3%">
             <br>
@@ -28,7 +28,7 @@
             <p id = "header" style = "border-style: none;">Page: 1</p>
             <div>
                 <h2 id = "title" contenteditable="true" class = "main_input"></h2>
-                <p contenteditable="true" id = "displaybox" class = "main_input">type here!</p>
+                <p contenteditable="true" id = "displaybox" class = "main_input" spellcheck="false">type here!</p>
             </div>
             <button id="save" onclick="save();" class="main_button">Save page</button>
             <div>
